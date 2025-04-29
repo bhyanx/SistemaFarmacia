@@ -19,37 +19,163 @@ farmacia-app/
 │   ├── index.html
 │   └── manifest.json
 ├── src/
-│   ├── admin/                          # Interfaz para administradores
-│   │   ├── components/                 # Componentes reutilizables (Alertas, Clientes, etc.)
-│   │   ├── pages/                     # Páginas principales (Dashboard, Usuarios, etc.)
-│   │   ├── services/                  # Servicios Axios para la API
-│   │   ├── styles/                    # Estilos específicos (CSS/Tailwind)
-│   │   ├── routes/                    # Rutas de la interfaz admin
+│   ├── admin/                          # Aplicación para el administrador
+│   │   ├── components/                 # Componentes reutilizables para admin
+│   │   │   ├── Alertas/
+│   │   │   │   ├── AlertaList.jsx
+│   │   │   │   ├── AlertaForm.jsx
+│   │   │   │   └── AlertaItem.jsx
+│   │   │   ├── Clientes/
+│   │   │   │   ├── ClienteList.jsx
+│   │   │   │   ├── ClienteForm.jsx
+│   │   │   │   └── ClienteItem.jsx
+│   │   │   ├── Compras/
+│   │   │   │   ├── CompraList.jsx
+│   │   │   │   ├── CompraForm.jsx
+│   │   │   │   └── CompraItem.jsx
+│   │   │   ├── DetalleCompras/
+│   │   │   │   ├── DetalleCompraList.jsx
+│   │   │   │   ├── DetalleCompraForm.jsx
+│   │   │   │   └── DetalleCompraItem.jsx
+│   │   │   ├── DetalleRecetas/
+│   │   │   │   ├── DetalleRecetaList.jsx
+│   │   │   │   ├── DetalleRecetaForm.jsx
+│   │   │   │   └── DetalleRecetaItem.jsx
+│   │   │   ├── DetalleVentas/
+│   │   │   │   ├── DetalleVentaList.jsx
+│   │   │   │   ├── DetalleVentaForm.jsx
+│   │   │   │   └── DetalleVentaItem.jsx
+│   │   │   ├── Productos/
+│   │   │   │   ├── ProductoList.jsx
+│   │   │   │   ├── ProductoForm.jsx
+│   │   │   │   └── ProductoItem.jsx
+│   │   │   ├── ProductoProveedores/
+│   │   │   │   ├── ProductoProveedorList.jsx
+│   │   │   │   ├── ProductoProveedorForm.jsx
+│   │   │   │   └── ProductoProveedorItem.jsx
+│   │   │   ├── Proveedores/
+│   │   │   │   ├── ProveedorList.jsx
+│   │   │   │   ├── ProveedorForm.jsx
+│   │   │   │   └── ProveedorItem.jsx
+│   │   │   ├── Recetas/
+│   │   │   │   ├── RecetaList.jsx
+│   │   │   │   ├── RecetaForm.jsx
+│   │   │   │   └── RecetaItem.jsx
+│   │   │   ├── Usuarios/
+│   │   │   │   ├── UsuarioList.jsx
+│   │   │   │   ├── UsuarioForm.jsx
+│   │   │   │   └── UsuarioItem.jsx
+│   │   │   ├── Ventas/
+│   │   │   │   ├── VentaList.jsx
+│   │   │   │   ├── VentaForm.jsx
+│   │   │   │   └── VentaItem.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Sidebar.jsx
+│   │   │   └── Footer.jsx
+│   │   ├── pages/                     # Páginas principales para admin
+│   │   │   ├── DashboardPage.jsx
+│   │   │   ├── AlertasPage.jsx
+│   │   │   ├── ClientesPage.jsx
+│   │   │   ├── ComprasPage.jsx
+│   │   │   ├── DetalleComprasPage.jsx
+│   │   │   ├── DetalleRecetasPage.jsx
+│   │   │   ├── DetalleVentasPage.jsx
+│   │   │   ├── ProductosPage.jsx
+│   │   │   ├── ProductoProveedoresPage.jsx
+│   │   │   ├── ProveedoresPage.jsx
+│   │   │   ├── RecetasPage.jsx
+│   │   │   ├── UsuariosPage.jsx
+│   │   │   ├── VentasPage.jsx
+│   │   │   └── NotFoundPage.jsx
+│   │   ├── services/                  # Servicios para consumir la API
+│   │   │   ├── alertaService.js
+│   │   │   ├── clienteService.js
+│   │   │   ├── compraService.js
+│   │   │   ├── detalleCompraService.js
+│   │   │   ├── detalleRecetaService.js
+│   │   │   ├── detalleVentaService.js
+│   │   │   ├── productoService.js
+│   │   │   ├── productoProveedorService.js
+│   │   │   ├── proveedorService.js
+│   │   │   ├── recetaService.js
+│   │   │   ├── usuarioService.js
+│   │   │   └── ventaService.js
+│   │   ├── styles/                    # Estilos específicos para admin
+│   │   │   ├── Admin.css
+│   │   │   └── tailwind.css
+│   │   ├── routes/                    # Configuración de rutas
 │   │   │   └── AdminRoutes.jsx
-│   │   └── App.jsx
-│   ├── client/                        # Interfaz para clientes
-│   │   ├── components/                # Componentes (Productos, Carrito, etc.)
-│   │   ├── pages/                    # Páginas (Home, Productos, etc.)
-│   │   ├── services/                 # Servicios Axios para la API
-│   │   ├── styles/                   # Estilos específicos (CSS/Tailwind)
-│   │   ├── routes/                   # Rutas de la interfaz cliente
+│   │   └── App.jsx                    # Punto de entrada para la app admin
+│   ├── client/                        # Aplicación para el cliente
+│   │   ├── components/                # Componentes reutilizables para cliente
+│   │   │   ├── Productos/
+│   │   │   │   ├── ProductoList.jsx
+│   │   │   │   ├── ProductoItem.jsx
+│   │   │   │   └── ProductoDetail.jsx
+│   │   │   ├── Ventas/
+│   │   │   │   ├── VentaForm.jsx
+│   │   │   │   ├── VentaList.jsx
+│   │   │   │   └── VentaItem.jsx
+│   │   │   ├── Recetas/
+│   │   │   │   ├── RecetaList.jsx
+│   │   │   │   ├── RecetaItem.jsx
+│   │   │   │   └── RecetaDetail.jsx
+│   │   │   ├── Cart/
+│   │   │   │   ├── Cart.jsx
+│   │   │   │   └── CartItem.jsx
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   └── Hero.jsx
+│   │   ├── pages/                    # Páginas principales para cliente
+│   │   │   ├── HomePage.jsx
+│   │   │   ├── ProductosPage.jsx
+│   │   │   ├── VentasPage.jsx
+│   │   │   ├── RecetasPage.jsx
+│   │   │   ├── CartPage.jsx
+│   │   │   └── NotFoundPage.jsx
+│   │   ├── services/                 # Servicios para consumir la API
+│   │   │   ├── productoService.js
+│   │   │   ├── ventaService.js
+│   │   │   └── recetaService.js
+│   │   ├── styles/                   # Estilos específicos para cliente
+│   │   │   ├── Client.css
+│   │   │   └── tailwind.css
+│   │   ├── routes/                   # Configuración de rutas
 │   │   │   └── ClientRoutes.jsx
-│   │   └── App.jsx
-│   ├── shared/                       # Recursos compartidos
+│   │   └── App.jsx                   # Punto de entrada para la app cliente
+│   ├── shared/                       # Recursos compartidos entre admin y cliente
 │   │   ├── api/                     # Configuración de Axios
-│   │   ├── components/              # Componentes comunes (Loading, Button, etc.)
+│   │   │   └── axiosInstance.js
+│   │   ├── components/              # Componentes comunes
+│   │   │   ├── Loading.jsx
+│   │   │   ├── ErrorMessage.jsx
+│   │   │   └── Button.jsx
 │   │   ├── hooks/                   # Custom hooks
-│   │   ├── utils/                   # Utilidades (formatDate, validators, etc.)
-│   │   └── context/                 # Contextos (Auth, Cart, etc.)
-│   ├── assets/                      # Imágenes, íconos, etc.
-│   ├── main.jsx                     # Punto de entrada de React
-│   └── App.jsx                      # Componente raíz para enrutamiento
-├── .env                             # Variables de entorno
-├── .gitignore
-├── package.json
-├── vite.config.js                   # Configuración de Vite
+│   │   │   ├── useApi.js
+│   │   │   └── useAuth.js
+│   │   ├── utils/                   # Utilidades comunes
+│   │   │   ├── formatDate.js
+│   │   │   ├── formatCurrency.js
+│   │   │   └── validators.js
+│   │   └── context/                 # Contextos para estado global
+│   │       ├── AuthContext.js
+│   │       └── CartContext.js
+│   ├── assets/                      # Recursos estáticos (imágenes, etc.)
+│   │   ├── images/
+│   │   │   ├── logo.png
+│   │   │   └── placeholder.jpg
+│   │   └── icons/
+│   │       ├── cart.svg
+│   │       └── user.svg
+│   ├── main.jsx                     # Punto de entrada principal de React
+│   └── App.jsx                      # Punto de entrada raíz para enrutar admin/cliente
+├── .env                             # Variables de entorno (API_URL, etc.)
+├── .gitignore                       # Archivos a ignorar en git
+├── package.json                     # Dependencias y scripts
+├── vite.config.js                   # Configuración de Vite (si usas Vite)
 ├── tailwind.config.js               # Configuración de Tailwind CSS
-└── README.md
+└── README.md                        # Documentación del proyecto
 ```
 
 ### Descripción de Carpetas
